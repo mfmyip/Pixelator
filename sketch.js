@@ -1,7 +1,16 @@
-// automatically pixelizes either a video or image
-// only supports .mp4 videos
-// press '1' to switch between pixels or circlular pixels
-// simply change the string in load to get to the file
+/* 
+automatically pixelizes either a video or image
+only supports .mp4 videos
+Controls
+press: 
+  p or P to pause / unpause
+  m or M to mute / unmute
+  , to decrease pixel size
+  . to increase pixel size
+  1 to switch between square / circular pixels
+simply change the string in load to get to the file
+*/
+
 p5.disableFriendlyErrors = true;
 
 let obj;
@@ -56,12 +65,12 @@ getVideoDimensionsOf(load).then(({
   vW = width;
   vH = height;
   print("vd" +  " " + vW + " " +vH);
-  setc();
+  reset();
   //setup();
 
 });
 
-function setc() {
+function reset() {
   createCanvas(vW, vH);
   obj.loop();
   obj.hide();
@@ -69,8 +78,8 @@ function setc() {
 
 /*
 function reset() {
-	preload();
-	setc();
+  preload();
+  setc();
 }
 */
 
@@ -86,30 +95,30 @@ function keyPressed() {
     isCircle = !isCircle;
   }
   if (key === ',') {
-  	pixelSize = max(4, pixelSize - 2);
+    pixelSize = max(4, pixelSize - 2);
   }
   if (key === '.') {
-  	pixelSize = min(50, pixelSize + 2);
+    pixelSize = min(50, pixelSize + 2);
   }
   if (key === 'm' || key === 'M') {
-  	isMute = !isMute;
-  	if (isVid) {
-  		if (isMute) {
-  			obj.volume(0);
-  		} else {
-  			obj.volume(1);
-  		}
-  	}
+    isMute = !isMute;
+    if (isVid) {
+      if (isMute) {
+        obj.volume(0);
+      } else {
+        obj.volume(1);
+      }
+    }
   }
   if (key === 'p' || key === 'P') {
-  	isPause = !isPause;
-  	if (isVid) {
-  		if (isPause) {
-  			obj.pause();
-  		} else {
-  			obj.play();
-  		}
-  	}
+    isPause = !isPause;
+    if (isVid) {
+      if (isPause) {
+        obj.pause();
+      } else {
+        obj.play();
+      }
+    }
   }
 }
 
