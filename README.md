@@ -20,7 +20,7 @@
 
 ### Examples:
 
-**Square pixels: **
+**Square pixels:**
 
 ![img_sqr](/Users/murphyyip/Documents/CS_fun/pixelator/capture_pixel.jpg)
 
