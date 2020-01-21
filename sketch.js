@@ -21,7 +21,7 @@ let isCircle = false;
 let isVid = false;
 let vW = 0; // video heigh and width, automatically set
 let vH = 0;
-let load = "data/flossing.mp4"
+let load = "data/bubz.mp4"
 let isMute = false;
 let isPause = false;
 
@@ -86,9 +86,6 @@ function reset() {
 */
 
 function draw() {
-  if(isVid) {
-    //obj.onended(reset);
-  }
   Pixelate(0, 0, width, height, pixelSize);
 }
 
@@ -122,6 +119,9 @@ function keyPressed() {
       }
     }
   }
+  if (key === ' ') {
+  	save("capture_pixel.jpg");
+  }
 }
 
 function Pixelate(startX, startY, endX, endY, pSize) {
@@ -130,6 +130,7 @@ function Pixelate(startX, startY, endX, endY, pSize) {
     for (let y = startY; y < endY; y += pixelSize) {
       let offset = ((y * width) + x) * 4;
       if (isCircle) {
+      	//math for determining the pixel density
         let dim = 80;
         fill(obj.pixels[offset] - dim, obj.pixels[offset + 1] - dim, obj.pixels[offset + 2] - dim);
         rect(x, y, pSize, pSize);
