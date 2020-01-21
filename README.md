@@ -22,11 +22,11 @@
 
 **Square pixels:**
 
-![img_sqr](/Users/murphyyip/Documents/CS_fun/pixelator/capture_pixel.jpg)
+![img_sqr](pixel_sqr.jpg)
 
 **Circular Pixels:**
 
-![img_circ](/Users/murphyyip/Documents/CS_fun/pixelator/capture_pixel (1).jpg)
+![img_circ](pixel_circ.jpg)
 
 ### To-Do:
 
